@@ -1,3 +1,4 @@
+from ckeditor.fields import RichTextField
 from django.db import models
 
 class Citas(models.Model):
@@ -12,7 +13,7 @@ class Citas(models.Model):
     paciente = models.ForeignKey('pacientes.Pacientes', on_delete=models.CASCADE)
     medico = models.ForeignKey('usuarios.Usuario', on_delete=models.CASCADE, limit_choices_to={'rol': 'medico'})
     fecha = models.DateTimeField()
-    motivo = models.TextField(blank=True)
+    motivo = RichTextField(blank=True)
     estado = models.CharField(max_length=20, choices=ESTADOS, default='Pendiente' )
 
     class Meta:

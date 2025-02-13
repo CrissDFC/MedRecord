@@ -35,6 +35,7 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     #Visual
     'jazzmin',
+    'ckeditor',
     #apps
     'django_tenants',
     'django.contrib.admin',
