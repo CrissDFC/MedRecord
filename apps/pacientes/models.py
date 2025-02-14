@@ -1,5 +1,11 @@
 from django.db import models
 
+GENEROS = [
+    ('Masculino', 'Masculino'),
+    ('Femenino', 'Femenino'),
+    ('Otro', 'Otro'),
+]
+
 class Pacientes(models.Model):
     nombre = models.CharField('Nombre',max_length=50 )
     apellido = models.CharField('Apellido',max_length=50 )
@@ -8,7 +14,7 @@ class Pacientes(models.Model):
     telefono = models.CharField('Telefono',max_length=10)
     email = models.EmailField('Email',max_length=50, unique=True)
     fecha_nacimiento = models.DateField('Fecha de nacimiento')
-    genero = models.CharField('Genero',max_length=10)
+    genero = models.CharField('Genero',max_length=10, choices=GENEROS)
     created_on = models.DateTimeField('Fecha de creacion',auto_now_add=True)
 
     class Meta:
